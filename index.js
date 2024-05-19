@@ -24,7 +24,7 @@ app.get("/api/hello", function (req, res) {
 });
 
 app.get("/api/:date?", (req, res) => {
-  const dateString = req.params.date;
+  const dateString = new Date(req.params.date).getTime() || req.params.date;
   const regex = /^[0-9]+$/;
 
   if (!dateString) {
