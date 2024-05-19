@@ -30,7 +30,7 @@ app.get("/api/:date?", (req, res) => {
   if (!dateString) {
     return res.status(200).json({
       unix: new Date().getTime(),
-      utf: new Date().toUTCString(),
+      utc: new Date().toUTCString(),
     });
   }
 
